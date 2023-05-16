@@ -72,7 +72,7 @@ class SongCreate(LoginRequiredMixin, CreateView):
 
 class SongUpdate(LoginRequiredMixin, UpdateView):
   model = Song
-  fields = ['name', 'color']
+  fields = ['name', 'band', 'genre']
 
 class SongDelete(LoginRequiredMixin, DeleteView):
   model = Song
