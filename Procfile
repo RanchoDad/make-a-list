@@ -1,1 +1,1 @@
-web: gunicorn makealist.wsgi
+web: gunicorn make_a_list.wsgi
