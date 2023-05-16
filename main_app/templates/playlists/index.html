@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Playlists</h1>
+
+{% for playlist in playlists %}
+  <a href="{% url 'detail' playlist.id %}">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ playlist.title }}</span>
+        <p>Purpose: {{ playlist.purpose }}</p>
+        <p>Description: {{ playlist.description }}</p>
+        
+      </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
