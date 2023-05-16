@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b(qxv%^s%$4&83_155mdzx#tn09wtri*c6oxjx@@^2(&)8kk*1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://git.heroku.com/makealist.git']
 
