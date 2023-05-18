@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Playlist, Review, Song
 from .forms import ReviewForm
+from django.db.models import Q
+
 
 def home(request):
   return render(request, 'home.html')
@@ -87,6 +89,18 @@ def assoc_song(request, playlist_id, song_id):
 def unassoc_song(request, playlist_id, song_id):
   Playlist.objects.get(id=playlist_id).songs.remove(song_id)
   return redirect('detail', playlist_id=playlist_id)
+
+@login_required()
+def search_view(request):
+  query = request.GET.get('q', '')
+  results = Song.objects.filter(
+    Q(name__icontains=query) |    
+    Q(band__icontains=query) |
+    Q(genre__icontains=query)
+  )
+  return render(request, 'search_results.html', {'results': results})
+
+
 
 '''
 @login_required
