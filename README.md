@@ -1,6 +1,6 @@
 Make a list APP:
 
-This app is a playlist creation tool. You can view your playlists and a library of songs in addition to creating new playlists and adding other songs. A user can also provide reviews of each playlist.
+This app is a playlist creation tool. You can view your playlists and a library of songs in addition to creating new playlists and adding other songs. A user can also provide reviews of each playlist and search for songs by name, band or genre.
 
 Screenshot
 
