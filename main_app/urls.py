@@ -1,6 +1,5 @@
 from django.urls import path, include
 from . import views
-from .views import search_view
 
 
 urlpatterns = [
@@ -21,5 +20,5 @@ urlpatterns = [
   path('songs/<int:pk>/update/', views.SongUpdate.as_view(), name='songs_update'),
   path('songs/<int:pk>/delete/', views.SongDelete.as_view(), name='songs_delete'),
   path('accounts/signup/', views.signup, name='signup'),
-  path('search/', search_view, name='search'),
+  path('search/', views.search_view, name='search'),
 ]
