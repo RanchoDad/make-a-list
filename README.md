@@ -4,7 +4,7 @@ This app is a playlist creation tool. You can view your playlists and a library 
 
 Screenshot
 
-Technologies:
+Technologies:  
 
 This app was built using Django and Python with a Github repository and deployed on Heroku. 
 
