@@ -6,25 +6,21 @@
 <h1>Search Results</h1>
 <ul>
   {% for song in results %}
-    <li>{{ song.name }} by {{ song.band }} (Genre: {{ song.genre }})</li>
+    <li>
+    <a href="{% url 'songs_detail' song.id %}">
+      <div class="card">
+          <div class="card-content">
+              <span class="card-title">{{ song.name }}</span>
+              <p>Genre: {{ song.genre }}</p>
+              <p>Band: {{ song.band }}</p>
+          </div>
+      </div>
+    </a>
+  </li>
   {% empty %}
     <li>No results found.</li>
   {% endfor %}
 </ul>
 
-
-
-
-
-{% for song in song_list %}
-  <a href="{% url 'songs_detail' song.id %}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ song.name }}</span>
-            <p>Genre: {{ song.genre }}</p>
-        </div>
-    </div>
-  </a>
-{% endfor %}
 
 {% endblock %}

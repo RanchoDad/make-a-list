@@ -11,4 +11,11 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+  background-color: aqua;
+  color: black;
+}
+
+.nav-style {
+  background-color: aqua;
+  color: black;
 }
