@@ -94,31 +94,11 @@ def unassoc_song(request, playlist_id, song_id):
 def search_view(request):
   query = request.GET.get('q', '')
   results = Song.objects.filter(
-    Q(name__icontains=query) |    
+    Q(name__icontains=query) |
     Q(band__icontains=query) |
     Q(genre__icontains=query)
   )
   return render(request, 'search_results.html', {'results': results})
-
-
-
-'''
-@login_required
-def add_photo(request, playlist_id):
-  photo_file = request.FILES.get('photo-file', None)
-  if photo_file:
-    s3 = boto3.client('s3')
-    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-    try:
-      bucket = os.environ['S3_BUCKET']
-      s3.upload_fileobj(photo_file, bucket, key)
-      url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-      Photo.objects.create(url=url, playlist_id=playlist_id)
-    except Exception as e:
-      print('An error occurred uploading file to S3')
-      print(e)
-  return redirect('detail', playlist_id=playlist_id)
-'''
 
 def signup(request):
   error_message = ''
